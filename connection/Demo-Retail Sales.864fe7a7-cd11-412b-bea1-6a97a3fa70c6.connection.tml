@@ -1,0 +1,17 @@
+guid: 864fe7a7-cd11-412b-bea1-6a97a3fa70c6
+connection:
+  name: Demo-Retail Sales
+  type: RDBMS_SNOWFLAKE
+  authentication_type: SERVICE_ACCOUNT
+  properties:
+  - key: accountName
+    value: thoughtspot_partner
+  - key: user
+    value: se_demo
+  - key: password
+    value: ""
+  - key: role
+    value: SE_ROLE
+  - key: warehouse
+    value: SE_DEMO_WH
+  description: ""

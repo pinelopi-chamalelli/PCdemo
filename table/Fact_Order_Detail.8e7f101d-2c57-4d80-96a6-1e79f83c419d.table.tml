@@ -1,0 +1,119 @@
+guid: 8e7f101d-2c57-4d80-96a6-1e79f83c419d
+table:
+  name: Fact_Order_Detail
+  db: NEWRETAIL
+  schema: SMALLRETAIL
+  db_table: NewRetail_Baskets_Fact
+  connection:
+    name: Demo-Retail Sales
+    fqn: 864fe7a7-cd11-412b-bea1-6a97a3fa70c6
+  columns:
+  - name: Basket_Key
+    db_column_name: Basket_Key
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: VARCHAR
+  - name: POS_Transaction_Number
+    db_column_name: POS_Transaction_Number
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Product_Key
+    db_column_name: Product_Key
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Product_Cost_Key
+    db_column_name: Product_Cost_Key
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Sales_Quantity
+    db_column_name: Sales_Quantity
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: INT64
+  - name: Sales_Dollar_Amount
+    db_column_name: Sales_Dollar_Amount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: DOUBLE
+  - name: Cost_Dollar_Amount
+    db_column_name: Cost_Dollar_Amount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: DOUBLE
+  - name: Gross_Profit_Dollar_Amount
+    db_column_name: Gross_Profit_Dollar_Amount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: DOUBLE
+  - name: Promotion_Key
+    db_column_name: Promotion_Key
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Diet_Key
+    db_column_name: Diet_Key
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: VARCHAR
+  joins_with:
+  - name: Diet_Key - Diet_Key
+    destination:
+      name: Dim_Diet_Type
+      fqn: cd88fd3e-e636-45c0-9a58-2488251086a0
+    "on": "[Fact_Order_Detail::Diet_Key] = [Dim_Diet_Type::Diet_Key]"
+    type: INNER
+  - name: POS_Transaction_Number - POS_Transaction_Number
+    destination:
+      name: Fact_Order_Header
+      fqn: f2341910-75ea-450d-af79-64dc00fa1c6e
+    "on": "[Fact_Order_Detail::POS_Transaction_Number] = [Fact_Order_Header::POS_Transaction_Number]"
+    type: INNER
+  - name: Product_Key - Product_Key
+    destination:
+      name: Dim_Product
+      fqn: 98c59ac9-2960-4848-a78c-b156df061f84
+    "on": "[Fact_Order_Detail::Product_Key] = [Dim_Product::Product_Key]"
+    type: INNER
+  - name: Promotion_Key - Promotion_Key
+    destination:
+      name: Dim_Promotion
+      fqn: 20e8e3ab-e16f-4638-80a1-6c6d8e31eb04
+    "on": "[Fact_Order_Detail::Promotion_Key] = [Dim_Promotion::Promotion_Key]"
+    type: INNER

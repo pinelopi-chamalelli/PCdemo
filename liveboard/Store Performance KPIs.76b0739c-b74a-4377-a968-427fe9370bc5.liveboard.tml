@@ -1,0 +1,435 @@
+guid: 76b0739c-b74a-4377-a968-427fe9370bc5
+liveboard:
+  name: Store Performance KPIs
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: Sales by Store Region and Zip Code - Last Month
+      tables:
+      - id: Retail Sales
+        name: Retail Sales
+        fqn: 782b50d1-fe89-4fee-812f-b5f9eb0a552d
+      search_query: "[Sales] [Store Zip Code] [Transaction Date].'last month' [Store Region]"
+      answer_columns:
+      - name: Store Region
+      - name: Store Zip Code
+      - name: Total Sales
+      table:
+        table_columns:
+        - column_id: Store Region
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Store Zip Code
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true,\"columnProperties\": [{\"columnId\": \"Store Zip Code\",\"columnProperty\": {}},{\"columnId\": \"Store Region\",\"columnProperty\": {}},{\"columnId\": \"Total Sales\",\"columnProperty\": {}}]}"
+      chart:
+        type: GEO_BUBBLE
+        chart_columns:
+        - column_id: Store Region
+        - column_id: Store Zip Code
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Store Zip Code
+          "y":
+          - Total Sales
+          color:
+          - Store Region
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"mapviewport\": {\"center\": [-1.0754019408084193E7,4615364.922231948],\"zoomLevel\": 4.0},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"59ee3081-803a-46d0-b200-38590f4f8efb\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"f114e6a5-5eb3-4ff7-b1f4-d8a98648f7c2\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Store Zip Code\"]}}],\"systemSeriesColors\": [{\"serieName\": \"east\",\"color\": \"#F04152\"},{\"serieName\": \"midwest\",\"color\": \"#2E75F0\"},{\"serieName\": \"south\",\"color\": \"#06BF7F\"},{\"serieName\": \"southwest\",\"color\": \"#48D1E0\"},{\"serieName\": \"west\",\"color\": \"#FF8142\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 0fa5807f-7cad-43a7-a237-60bb85cdf682
+  - id: Viz_2
+    answer:
+      name: Top 10 Stores by Gross Profit Margin (%) - Last 3 Months
+      tables:
+      - id: Retail Sales
+        name: Retail Sales
+        fqn: 782b50d1-fe89-4fee-812f-b5f9eb0a552d
+      search_query: "top 10 [Store Name] [Gross Profit (%)] [Transaction Date].'last 3 months'"
+      answer_columns:
+      - name: Gross Profit (%)
+      - name: Store Name
+      table:
+        table_columns:
+        - column_id: Gross Profit (%)
+          headline_aggregation: TABLE_AGGR
+        - column_id: Store Name
+          headline_aggregation: COUNT_DISTINCT
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true,\"columnProperties\": [{\"columnId\": \"Store Name\",\"columnProperty\": {}},{\"columnId\": \"Gross Profit (%)\",\"columnProperty\": {}}]}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Gross Profit (%)
+        - column_id: Store Name
+        axis_configs:
+        - x:
+          - Store Name
+          "y":
+          - Gross Profit (%)
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": false,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"columnProperties\": [{\"columnId\": \"Store Name\",\"columnProperty\": {\"dataLabels\": true}},{\"columnId\": \"Gross Profit (%)\",\"columnProperty\": {\"dataLabels\": true}}],\"axisProperties\": [{\"id\": \"fff18a44-befa-4f94-b3f4-83fc6e628445\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Gross Profit (%)\"],\"isOpposite\": false}},{\"id\": \"1417b3cc-8ae0-4e44-9727-a114d787d233\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Store Name\"]}}],\"seriesColors\": [{\"serieName\": \"Gross Profit (%)\",\"color\": \"#48d1e0\"}],\"systemSeriesColors\": [{\"serieName\": \"Gross Profit (%)\",\"color\": \"#FCC838\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 53d3c3f2-e0ce-424d-9477-8d152fc2bf12
+  - id: Viz_3
+    answer:
+      name: Sales by State - Last 3 Months
+      tables:
+      - id: Retail Sales
+        name: Retail Sales
+        fqn: 782b50d1-fe89-4fee-812f-b5f9eb0a552d
+      search_query: "[Sales] [Transaction Date].'last 3 months' by [Store State]"
+      answer_columns:
+      - name: Store State
+      - name: Total Sales
+      table:
+        table_columns:
+        - column_id: Store State
+          show_headline: false
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true,\"columnProperties\": [{\"columnId\": \"ab65761d-98e9-4c8b-af75-a0fb1033a55c\",\"columnProperty\": {}},{\"columnId\": \"Total Sales\",\"columnProperty\": {}}]}"
+      chart:
+        type: PIE
+        chart_columns:
+        - column_id: Store State
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Store State
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"mapviewport\": {\"center\": [-1.0670154693088695E7,4614999.07705929],\"zoomLevel\": 4.0},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {},\"allLabels\": false},\"columnProperties\": [{\"columnId\": \"Total Sales\",\"columnProperty\": {\"dataLabels\": false}}],\"axisProperties\": [{\"id\": \"b50bb7cd-2d0a-437b-a74b-1c2cd2d6fc6c\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"e4614e5c-9272-408a-abcc-d712b5e46bf1\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Store State\"]}}],\"systemSeriesColors\": [{\"serieName\": \"alabama\",\"color\": \"#F47E89\"},{\"serieName\": \"arizona\",\"color\": \"#B6313E\"},{\"serieName\": \"arkansas\",\"color\": \"#F9B3B9\"},{\"serieName\": \"california\",\"color\": \"#F04152\"},{\"serieName\": \"colorado\",\"color\": \"#A2ACBA\"},{\"serieName\": \"florida\",\"color\": \"#47515F\"},{\"serieName\": \"georgia\",\"color\": \"#BEC6D0\"},{\"serieName\": \"illinois\",\"color\": \"#747E8C\"},{\"serieName\": \"indiana\",\"color\": \"#FFA97E\"},{\"serieName\": \"kansas\",\"color\": \"#C26232\"},{\"serieName\": \"kentucky\",\"color\": \"#FFCCB3\"},{\"serieName\": \"louisiana\",\"color\": \"#FF8142\"},{\"serieName\": \"maine\",\"color\": \"#B094F8\"},{\"serieName\": \"massachusetts\",\"color\": \"#6A4ABA\"},{\"serieName\": \"michigan\",\"color\": \"#D1C0FB\"},{\"serieName\": \"minnesota\",\"color\": \"#8C62F5\"},{\"serieName\": \"mississippi\",\"color\": \"#025B3C\"},{\"serieName\": \"missouri\",\"color\": \"#56D3A8\"},{\"serieName\": \"nebraska\",\"color\": \"#049160\"},{\"serieName\": \"nevada\",\"color\": \"#9BE5CB\"},{\"serieName\": \"new hampshire\",\"color\": \"#06BF7F\"},{\"serieName\": \"new jersey\",\"color\": \"#785F1A\"},{\"serieName\": \"new mexico\",\"color\": \"#FCD977\"},{\"serieName\": \"new york\",\"color\": \"#BF982A\"},{\"serieName\": \"north carolina\",\"color\": \"#FDE9AF\"},{\"serieName\": \"ohio\",\"color\": \"#FCC838\"},{\"serieName\": \"oklahoma\",\"color\": \"#22636B\"},{\"serieName\": \"oregon\",\"color\": \"#82DFE9\"},{\"serieName\": \"pennsylvania\",\"color\": \"#369FAA\"},{\"serieName\": \"rhode island\",\"color\": \"#B5ECF2\"},{\"serieName\": \"south dakota\",\"color\": \"#48D1E0\"},{\"serieName\": \"tennessee\",\"color\": \"#163772\"},{\"serieName\": \"texas\",\"color\": \"#71A1F4\"},{\"serieName\": \"virginia\",\"color\": \"#2359B6\"},{\"serieName\": \"washington\",\"color\": \"#ABC7F9\"},{\"serieName\": \"wisconsin\",\"color\": \"#2E75F0\"},{\"serieName\": \"Alabama\",\"color\": \"#F47E89\"},{\"serieName\": \"Arizona\",\"color\": \"#B6313E\"},{\"serieName\": \"Arkansas\",\"color\": \"#F9B3B9\"},{\"serieName\": \"California\",\"color\": \"#F04152\"},{\"serieName\": \"Colorado\",\"color\": \"#A2ACBA\"},{\"serieName\": \"Florida\",\"color\": \"#47515F\"},{\"serieName\": \"Georgia\",\"color\": \"#BEC6D0\"},{\"serieName\": \"Illinois\",\"color\": \"#747E8C\"},{\"serieName\": \"Indiana\",\"color\": \"#FFA97E\"},{\"serieName\": \"Kansas\",\"color\": \"#C26232\"},{\"serieName\": \"Kentucky\",\"color\": \"#FFCCB3\"},{\"serieName\": \"Louisiana\",\"color\": \"#FF8142\"},{\"serieName\": \"Maine\",\"color\": \"#B094F8\"},{\"serieName\": \"Massachusetts\",\"color\": \"#6A4ABA\"},{\"serieName\": \"Michigan\",\"color\": \"#D1C0FB\"},{\"serieName\": \"Minnesota\",\"color\": \"#8C62F5\"},{\"serieName\": \"Mississippi\",\"color\": \"#025B3C\"},{\"serieName\": \"Missouri\",\"color\": \"#56D3A8\"},{\"serieName\": \"Nebraska\",\"color\": \"#049160\"},{\"serieName\": \"Nevada\",\"color\": \"#9BE5CB\"},{\"serieName\": \"New Hampshire\",\"color\": \"#06BF7F\"},{\"serieName\": \"New Jersey\",\"color\": \"#785F1A\"},{\"serieName\": \"New Mexico\",\"color\": \"#FCD977\"},{\"serieName\": \"New York\",\"color\": \"#BF982A\"},{\"serieName\": \"North Carolina\",\"color\": \"#FDE9AF\"},{\"serieName\": \"Ohio\",\"color\": \"#FCC838\"},{\"serieName\": \"Oklahoma\",\"color\": \"#22636B\"},{\"serieName\": \"Oregon\",\"color\": \"#82DFE9\"},{\"serieName\": \"Pennsylvania\",\"color\": \"#369FAA\"},{\"serieName\": \"Rhode Island\",\"color\": \"#B5ECF2\"},{\"serieName\": \"South Dakota\",\"color\": \"#48D1E0\"},{\"serieName\": \"Tennessee\",\"color\": \"#163772\"},{\"serieName\": \"Texas\",\"color\": \"#71A1F4\"},{\"serieName\": \"Virginia\",\"color\": \"#2359B6\"},{\"serieName\": \"Washington\",\"color\": \"#ABC7F9\"},{\"serieName\": \"Wisconsin\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+    viz_guid: c1ab7744-7d48-4a82-bf31-3ecedce55266
+  - id: Viz_4
+    answer:
+      name: Top 3 Stores by Weekly Sales - Last Month
+      tables:
+      - id: Retail Sales
+        name: Retail Sales
+        fqn: 782b50d1-fe89-4fee-812f-b5f9eb0a552d
+      search_query: "top 3 [Store Name] [Sales] for each [Transaction Date] [Transaction Date].weekly [Transaction Date].'last month'"
+      answer_columns:
+      - name: Store Name
+      - name: Total Sales
+      - name: Week(Transaction Date)
+      table:
+        table_columns:
+        - column_id: Store Name
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        - column_id: Week(Transaction Date)
+          headline_aggregation: MIN-MAX
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true,\"columnProperties\": [{\"columnId\": \"Week(Transaction Date)\",\"columnProperty\": {}},{\"columnId\": \"Store Name\",\"columnProperty\": {}},{\"columnId\": \"Total Sales\",\"columnProperty\": {}}]}"
+      chart:
+        type: STACKED_COLUMN
+        chart_columns:
+        - column_id: Store Name
+        - column_id: Total Sales
+        - column_id: Week(Transaction Date)
+        axis_configs:
+        - x:
+          - Week(Transaction Date)
+          "y":
+          - Total Sales
+          color:
+          - Store Name
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {\"xGridlineEnabled\": false,\"yGridlineEnabled\": true},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {},\"showStackedLabels\": true},\"columnProperties\": [{\"columnId\": \"Store Name\",\"columnProperty\": {\"dataLabels\": true}},{\"columnId\": \"Week(Transaction Date)\",\"columnProperty\": {\"dataLabels\": true}},{\"columnId\": \"Total Sales\",\"columnProperty\": {\"dataLabels\": true}}],\"axisProperties\": [{\"id\": \"20ce27eb-3fb3-45e1-a4c3-8f3242b33e30\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"19e8cadc-12be-4361-b724-ee2e7596be50\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Transaction Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"edinburg store #972\",\"color\": \"#56D3A8\"},{\"serieName\": \"gastonia store #942\",\"color\": \"#06BF7F\"},{\"serieName\": \"greeley store #705\",\"color\": \"#FCD977\"},{\"serieName\": \"lewisville store #911\",\"color\": \"#FCC838\"},{\"serieName\": \"mesquite store #70\",\"color\": \"#82DFE9\"},{\"serieName\": \"tempe store #332\",\"color\": \"#48D1E0\"},{\"serieName\": \"tempe store #39\",\"color\": \"#71A1F4\"},{\"serieName\": \"tulsa store #784\",\"color\": \"#2E75F0\"},{\"serieName\": \"baton rouge store #557\",\"color\": \"#B094F8\"},{\"serieName\": \"columbus store #402\",\"color\": \"#8C62F5\"},{\"serieName\": \"cranston store #326\",\"color\": \"#06BF7F\"},{\"serieName\": \"knoxville store #617\",\"color\": \"#B094F8\"},{\"serieName\": \"pompano beach store #247\",\"color\": \"#2359B6\"},{\"serieName\": \"aurora store #184\",\"color\": \"#56D3A8\"},{\"serieName\": \"beaumont store #858\",\"color\": \"#FCD977\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: ca9a7ced-0c7a-4b59-9940-634d0b3aeb60
+  - id: Viz_5
+    answer:
+      name: Total Sales by Month and Store Region
+      tables:
+      - id: Retail Sales
+        name: Retail Sales
+        fqn: 782b50d1-fe89-4fee-812f-b5f9eb0a552d
+      search_query: "[Sales] [Store Region] [Transaction Date].2023 [Transaction Date].monthly"
+      answer_columns:
+      - name: Month(Transaction Date)
+      - name: Store Region
+      - name: Total Sales
+      table:
+        table_columns:
+        - column_id: Month(Transaction Date)
+          show_headline: false
+        - column_id: Store Region
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(Transaction Date)
+        - column_id: Store Region
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Month(Transaction Date)
+          "y":
+          - Total Sales
+          color:
+          - Store Region
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"63158f00-d4fc-4edc-8dd2-f86cf00e15a4\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"4e1a7f8c-a32a-40e7-919e-f8b91e66f570\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Transaction Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"east\",\"color\": \"#2E75F0\"},{\"serieName\": \"midwest\",\"color\": \"#48D1E0\"},{\"serieName\": \"south\",\"color\": \"#FCC838\"},{\"serieName\": \"southwest\",\"color\": \"#06BF7F\"},{\"serieName\": \"west\",\"color\": \"#8C62F5\"}]}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+    viz_guid: f9fcd8b4-761a-4c06-a8b0-d3ac6da76d44
+  - id: Viz_6
+    answer:
+      name: Total Sales
+      tables:
+      - id: Retail Sales
+        name: Retail Sales
+        fqn: 782b50d1-fe89-4fee-812f-b5f9eb0a552d
+      search_query: "[Sales] [Transaction Date].quarterly [Transaction Date].'last 12 quarters'"
+      answer_columns:
+      - name: Quarter(Transaction Date)
+      - name: Total Sales
+      table:
+        table_columns:
+        - column_id: Quarter(Transaction Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Sales
+          headline_aggregation: SUM
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Quarter(Transaction Date)
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Quarter(Transaction Date)
+          "y":
+          - Total Sales
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {\"customProps\": \"{\\\"showLabel\\\":true,\\\"showComparison\\\":true,\\\"showSparkline\\\":true,\\\"showAnomalies\\\":true,\\\"showBounds\\\":true,\\\"customCompare\\\":\\\"PREV_YEAR\\\"}\"}},\"axisProperties\": [{\"id\": \"a7a0d229-efed-482c-b050-4110f51e9733\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"a3ef2c11-158e-4fb1-9cd4-66c910a800ce\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Quarter(Transaction Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Sales\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 3c839c6a-b6d0-44f3-9d55-55fa5c01cc8a
+  - id: Viz_7
+    answer:
+      name: Gross Profit ($)
+      tables:
+      - id: Retail Sales
+        name: Retail Sales
+        fqn: 782b50d1-fe89-4fee-812f-b5f9eb0a552d
+      search_query: "[Gross Profit ($)] [Transaction Date].weekly [Transaction Date].'last 26 weeks'"
+      answer_columns:
+      - name: Gross Profit ($)
+      - name: Week(Transaction Date)
+      table:
+        table_columns:
+        - column_id: Gross Profit ($)
+          headline_aggregation: TABLE_AGGR
+        - column_id: Week(Transaction Date)
+          show_headline: false
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Gross Profit ($)
+        - column_id: Week(Transaction Date)
+        axis_configs:
+        - x:
+          - Week(Transaction Date)
+          "y":
+          - Gross Profit ($)
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"179eb745-f1e2-4091-a20f-474e2b553194\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Gross Profit ($)\"],\"isOpposite\": false}},{\"id\": \"1bb14c52-8a70-4233-8301-b4d578ab3f0e\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Transaction Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Gross Profit ($)\",\"color\": \"#06BF7F\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: a0f2f6ef-f3f5-4d53-a218-44312f1a3473
+  - id: Viz_8
+    answer:
+      name: Gross Profit (%)
+      tables:
+      - id: Retail Sales
+        name: Retail Sales
+        fqn: 782b50d1-fe89-4fee-812f-b5f9eb0a552d
+      search_query: "[Gross Profit (%)] [Transaction Date].weekly [Transaction Date].'last 26 weeks'"
+      answer_columns:
+      - name: Gross Profit (%)
+      - name: Week(Transaction Date)
+      table:
+        table_columns:
+        - column_id: Gross Profit (%)
+          headline_aggregation: TABLE_AGGR
+        - column_id: Week(Transaction Date)
+          show_headline: false
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Gross Profit (%)
+        - column_id: Week(Transaction Date)
+        axis_configs:
+        - x:
+          - Week(Transaction Date)
+          "y":
+          - Gross Profit (%)
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"e269985a-7e6d-44d1-93ac-3aa3a09ab55c\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Gross Profit (%)\"],\"isOpposite\": false}},{\"id\": \"e17a9bde-be58-4fc6-9e4c-3dfa0a993834\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Week(Transaction Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Gross Profit (%)\",\"color\": \"#2770ef\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: ef2b0051-1243-45fe-8034-80c4f637f572
+  - id: Viz_9
+    answer:
+      name: "Total Sales, Growth of Total Sales by Store Region, Category and Quarterly Date"
+      tables:
+      - id: P2 Retail Sales
+        name: P2 Retail Sales
+        fqn: e61a489b-80ef-4bad-84eb-b659b410d097
+      search_query: "growth of [Sales] by [Date] [Date].quarterly year over year [Date].'last 2 years' [Sales] [Category] [Store Region]"
+      answer_columns:
+      - name: Category
+      - name: Growth of Total Sales
+      - name: Quarter(Date)
+      - name: Store Region
+      - name: Total Sales
+      table:
+        table_columns:
+        - column_id: Category
+          show_headline: false
+        - column_id: Growth of Total Sales
+          show_headline: false
+        - column_id: Quarter(Date)
+          show_headline: false
+        - column_id: Store Region
+          show_headline: false
+        - column_id: Total Sales
+          show_headline: false
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"orderedColumnIds\": [\"Quarter(Date)\",\"Total Sales\",\"Growth of Total Sales\"]}"
+      chart:
+        type: PIVOT_TABLE
+        chart_columns:
+        - column_id: Category
+        - column_id: Growth of Total Sales
+        - column_id: Quarter(Date)
+        - column_id: Store Region
+        - column_id: Total Sales
+        axis_configs:
+        - x:
+          - Store Region
+          - Category
+          "y":
+          - Total Sales
+          - Growth of Total Sales
+          color:
+          - Quarter(Date)
+        - "y":
+          - Total Sales
+          - Growth of Total Sales
+        - x:
+          - Store Region
+          "y":
+          - Total Sales
+          - Growth of Total Sales
+        - "y":
+          - Total Sales
+          - Growth of Total Sales
+          color:
+          - Quarter(Date)
+        - x:
+          - Store Region
+          "y":
+          - Total Sales
+          - Growth of Total Sales
+          color:
+          - Quarter(Date)
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {\"pivotState\": {\"fields\": [{\"dataField\": \"Quarter(Date)\",\"sortBy\": \"value\",\"sortBySummaryField\": \"Quarter(Date)\",\"sortOrder\": \"asc\",\"expanded\": false,\"area\": \"column\"}]},\"pivotSummariesState\": {\"showRowGrandTotals\": true,\"showColumnGrandTotals\": false},\"showPivotSummaryPrior\": \"NONE\"}},\"columnProperties\": [{\"columnId\": \"Quarter(Date)\",\"columnProperty\": {}},{\"columnId\": \"Category\",\"columnProperty\": {}},{\"columnId\": \"Total Sales\",\"columnProperty\": {}},{\"columnId\": \"Store Region\",\"columnProperty\": {}},{\"columnId\": \"Growth of Total Sales\",\"columnProperty\": {\"conditionalFormatting\": {\"rows\": [{\"operator\": \"GREATER_THAN_EQUAL_TO\",\"value\": \"0\",\"plotAsBand\": false,\"fontProperties\": {\"color\": \"#049160\"},\"backgroundFormatType\": \"SOLID\",\"solidBackgroundAttrs\": {\"color\": \"#FFFFFF\"}},{\"operator\": \"LESS_THAN\",\"value\": \"0\",\"plotAsBand\": false,\"fontProperties\": {\"color\": \"#B6313E\"},\"backgroundFormatType\": \"SOLID\",\"solidBackgroundAttrs\": {\"color\": \"#FFFFFF\"}}]}}}],\"axisProperties\": [{\"id\": \"45ce5456-5157-41dd-9ec0-6ed31940663d\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Sales\"],\"isOpposite\": false}},{\"id\": \"fbbd015a-9718-4674-8c28-bd4a3f9bc604\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Growth of Total Sales\"],\"isOpposite\": true}},{\"id\": \"cc0a806e-7413-4cd6-ab1b-d73d0d6a25be\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Store Region\",\"Category\"]}}]}"
+      display_mode: CHART_MODE
+    viz_guid: 5ca1aeea-9dbf-4c1f-a469-7124b61e4b36
+  filters:
+  - column:
+    - Retail Sales::Category
+    is_mandatory: false
+    is_single_value: false
+    display_name: ""
+  - column:
+    - Retail Sales::Store Region
+    is_mandatory: false
+    is_single_value: false
+    display_name: ""
+  - column:
+    - Retail Sales::Age Group
+    is_mandatory: false
+    is_single_value: false
+    display_name: ""
+  - column:
+    - Retail Sales::Department
+    is_mandatory: false
+    is_single_value: false
+    display_name: ""
+  - column:
+    - Retail Sales::Brand
+    is_mandatory: false
+    is_single_value: false
+    display_name: ""
+  - column:
+    - Retail Sales::Product
+    is_mandatory: false
+    is_single_value: false
+    display_name: ""
+  layout:
+    tiles:
+    - visualization_id: Viz_8
+      x: 4
+      "y": 0
+      height: 3
+      width: 2
+    - visualization_id: Viz_2
+      x: 9
+      "y": 4
+      height: 4
+      width: 3
+    - visualization_id: Viz_3
+      x: 6
+      "y": 4
+      height: 4
+      width: 3
+    - visualization_id: Viz_9
+      x: 0
+      "y": 12
+      height: 5
+      width: 12
+    - visualization_id: Viz_4
+      x: 6
+      "y": 0
+      height: 4
+      width: 6
+    - visualization_id: Viz_6
+      x: 0
+      "y": 0
+      height: 3
+      width: 2
+    - visualization_id: Viz_1
+      x: 0
+      "y": 3
+      height: 9
+      width: 6
+    - visualization_id: Viz_7
+      x: 2
+      "y": 0
+      height: 3
+      width: 2
+    - visualization_id: Viz_5
+      x: 6
+      "y": 8
+      height: 4
+      width: 6

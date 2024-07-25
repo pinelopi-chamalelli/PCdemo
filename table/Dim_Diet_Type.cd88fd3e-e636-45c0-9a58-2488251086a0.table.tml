@@ -1,0 +1,25 @@
+guid: cd88fd3e-e636-45c0-9a58-2488251086a0
+table:
+  name: Dim_Diet_Type
+  db: NEWRETAIL
+  schema: SMALLRETAIL
+  db_table: NewRetail_Product_Diet_Dimension
+  connection:
+    name: Demo-Retail Sales
+    fqn: 864fe7a7-cd11-412b-bea1-6a97a3fa70c6
+  columns:
+  - name: Diet_Key
+    db_column_name: Diet_Key
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: VARCHAR
+  - name: Diet_Type
+    db_column_name: Diet_Type
+    properties:
+      column_type: ATTRIBUTE
+      value_casing: UNKNOWN
+    db_column_properties:
+      data_type: VARCHAR
