@@ -387,57 +387,49 @@ liveboard:
     is_single_value: false
     display_name: ""
   layout:
-    tabs:
-    - name: Overview
-      description: ""
-      tiles:
-      - visualization_id: Viz_1
-        x: 0
-        "y": 3
-        height: 9
-        width: 6
-      - visualization_id: Viz_2
-        x: 9
-        "y": 4
-        height: 4
-        width: 3
-      - visualization_id: Viz_3
-        x: 6
-        "y": 4
-        height: 4
-        width: 3
-      - visualization_id: Viz_4
-        x: 6
-        "y": 0
-        height: 4
-        width: 6
-      - visualization_id: Viz_5
-        x: 6
-        "y": 8
-        height: 4
-        width: 6
-      - visualization_id: Viz_6
-        x: 0
-        "y": 0
-        height: 3
-        width: 2
-      - visualization_id: Viz_7
-        x: 2
-        "y": 0
-        height: 3
-        width: 2
-      - visualization_id: Viz_8
-        x: 4
-        "y": 0
-        height: 3
-        width: 2
-      id: b710883b-731f-4cba-8d6d-208a5cd2180d
-    - name: Analysis
-      description: ""
-      tiles:
-      - visualization_id: Viz_9
-        x: 0
-        "y": 0
-        height: 5
-        width: 12
-      id: a815066c-15d6-414e-9943-55eded058c41
+    tiles:
+    - visualization_id: Viz_8
+      x: 4
+      "y": 0
+      height: 3
+      width: 2
+    - visualization_id: Viz_2
+      x: 9
+      "y": 4
+      height: 4
+      width: 3
+    - visualization_id: Viz_3
+      x: 6
+      "y": 4
+      height: 4
+      width: 3
+    - visualization_id: Viz_9
+      x: 0
+      "y": 12
+      height: 5
+      width: 12
+    - visualization_id: Viz_4
+      x: 6
+      "y": 0
+      height: 4
+      width: 6
+    - visualization_id: Viz_6
+      x: 0
+      "y": 0
+      height: 3
+      width: 2
+    - visualization_id: Viz_1
+      x: 0
+      "y": 3
+      height: 9
+      width: 6
+    - visualization_id: Viz_7
+      x: 2
+      "y": 0
+      height: 3
+      width: 2
+    - visualization_id: Viz_5
+      x: 6
+      "y": 8
+      height: 4
+      width: 6
