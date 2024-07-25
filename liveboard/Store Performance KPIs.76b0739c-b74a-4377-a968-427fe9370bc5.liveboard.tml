@@ -131,7 +131,7 @@ liveboard:
         client_state: ""
         client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true,\"columnProperties\": [{\"columnId\": \"Week(Transaction Date)\",\"columnProperty\": {}},{\"columnId\": \"Store Name\",\"columnProperty\": {}},{\"columnId\": \"Total Sales\",\"columnProperty\": {}}]}"
       chart:
-        type: STACKED_COLUMN
+        type: STACKED_BAR
         chart_columns:
         - column_id: Store Name
         - column_id: Total Sales
