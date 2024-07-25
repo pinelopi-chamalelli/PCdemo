@@ -431,12 +431,13 @@ liveboard:
         "y": 0
         height: 3
         width: 2
-      - visualization_id: Viz_9
-        x: 0
-        "y": 12
-        height: 5
-        width: 12
       id: b710883b-731f-4cba-8d6d-208a5cd2180d
     - name: Analysis
       description: ""
+      tiles:
+      - visualization_id: Viz_9
+        x: 0
+        "y": 0
+        height: 5
+        width: 12
       id: a815066c-15d6-414e-9943-55eded058c41
