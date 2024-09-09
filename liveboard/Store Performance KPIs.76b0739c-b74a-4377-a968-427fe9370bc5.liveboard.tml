@@ -420,49 +420,56 @@ liveboard:
     is_single_value: false
     display_name: ""
   layout:
-    tiles:
-    - visualization_id: Viz_8
-      x: 4
-      "y": 0
-      height: 3
-      width: 2
-    - visualization_id: Viz_2
-      x: 9
-      "y": 4
-      height: 4
-      width: 3
-    - visualization_id: Viz_3
-      x: 6
-      "y": 4
-      height: 4
-      width: 3
-    - visualization_id: Viz_9
-      x: 0
-      "y": 12
-      height: 5
-      width: 12
-    - visualization_id: Viz_4
-      x: 6
-      "y": 0
-      height: 4
-      width: 6
-    - visualization_id: Viz_6
-      x: 0
-      "y": 0
-      height: 3
-      width: 2
-    - visualization_id: Viz_1
-      x: 0
-      "y": 3
-      height: 9
-      width: 6
-    - visualization_id: Viz_7
-      x: 2
-      "y": 0
-      height: 3
-      width: 2
-    - visualization_id: Viz_5
-      x: 6
-      "y": 8
-      height: 4
-      width: 6
+    tabs:
+    - name: Tab 1
+      description: ""
+      tiles:
+      - visualization_id: Viz_1
+        x: 0
+        "y": 3
+        height: 9
+        width: 6
+      - visualization_id: Viz_2
+        x: 9
+        "y": 4
+        height: 4
+        width: 3
+      - visualization_id: Viz_3
+        x: 6
+        "y": 4
+        height: 4
+        width: 3
+      - visualization_id: Viz_4
+        x: 6
+        "y": 0
+        height: 4
+        width: 6
+      - visualization_id: Viz_5
+        x: 6
+        "y": 8
+        height: 4
+        width: 6
+      - visualization_id: Viz_6
+        x: 0
+        "y": 0
+        height: 3
+        width: 2
+      - visualization_id: Viz_7
+        x: 2
+        "y": 0
+        height: 3
+        width: 2
+      - visualization_id: Viz_8
+        x: 4
+        "y": 0
+        height: 3
+        width: 2
+      - visualization_id: Viz_9
+        x: 0
+        "y": 12
+        height: 5
+        width: 12
+      id: 78227509-b1d0-4dc3-8d7b-bf64315b19a6
+    - name: Tab 2
+      description: ""
+      id: 1e85ebce-58b0-4ec3-b0dd-e958db35d9e8
